@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 
-# Load and preprocess the dataset
+
 df = pd.read_csv("german_credit_full.csv")
 categorical_cols = ['Sex', 'Housing', 'Saving accounts', 'Checking account', 'Purpose', 'Risk']
 label_encoders = {}
@@ -28,20 +28,19 @@ log_model.fit(X_scaled, y)
 rf_model = RandomForestClassifier()
 rf_model.fit(X_scaled, y)
 
-# Streamlit UI Setup
+
 st.set_page_config(page_title="Credit Risk Dashboard", layout="wide", initial_sidebar_state="expanded")
 st.markdown("""
    
 
 
 <style>
-/* App Background */
+
 .stApp {
     background: #000000;
     color: #f5f5f5;
 }
 
-/* Glassmorphism Box */
 .glass-box {
     background: rgba(255, 255, 255, 0.04);
     color: #f5f5f5;
@@ -54,12 +53,12 @@ st.markdown("""
     border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Headers and Text */
+
 h1, h2, h3, h4, h5, h6, .stMarkdown, .stText, .stSubheader {
     color: #ffffff !important;
 }
 
-/* Buttons */
+
 .stButton > button {
     color: #ffffff !important;
     background: linear-gradient(to right, #1a1a1a, #333333) !important;
@@ -76,7 +75,7 @@ h1, h2, h3, h4, h5, h6, .stMarkdown, .stText, .stSubheader {
     background: linear-gradient(to right, #2a2a2a, #444444) !important;
 }
 
-/* Form Fields (Dropdown, Slider, etc.) */
+
 .stSelectbox, .stNumberInput, .stRadio, .stTextInput, .stDateInput,
 .stSlider > div[data-baseweb="slider"] {
     background-color: #1a1a1a !important;
@@ -86,7 +85,7 @@ h1, h2, h3, h4, h5, h6, .stMarkdown, .stText, .stSubheader {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Hover / Focus state for input fields */
+
 .stSelectbox:hover, .stNumberInput:hover, .stRadio:hover, .stTextInput:hover, .stDateInput:hover,
 .stSlider > div[data-baseweb="slider"]:hover {
     background-color: #222222 !important;
@@ -103,7 +102,7 @@ h1, h2, h3, h4, h5, h6, .stMarkdown, .stText, .stSubheader {
 
 st.title("💼 Credit Risk Evaluation Dashboard")
 
-# Tabs
+
 tab1, tab2, tab3 = st.tabs(["📋 Applicant Info", "📈 Prediction", "📊 Credit Score"])
 
 with tab1:
